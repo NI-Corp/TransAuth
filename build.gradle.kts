@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.androidLibrary)
+    id("com.android.library")
     id("com.github.ben-manes.versions") version "0.47.0"
 }
 
