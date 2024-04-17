@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.nicorp.transauth">
+
+    <uses-permission android:name="com.nicorp.permission.SEND_RECEIVE_DATA"/>
+
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <application>
+        <service
+            android:name=".TransAuthService"
+            android:enabled="true"
+            android:exported="true" />
+        <service android:name=".FirebaseService" android:exported="true" />
+        <service android:name=".TransAuthReceiveService" android:exported="true" />
+    </application>
+</manifest>
