@@ -1,5 +1,9 @@
 package com.nicorp.transauth;
 
+import static com.nicorp.transauth.TransAuth.getAppId;
+import static com.nicorp.transauth.TransAuth.getPermissions;
+import static com.nicorp.transauth.TransAuth.getSecretKey;
+
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,7 +16,6 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-import com.parse.Parse;
 
 import java.io.IOException;
 
@@ -22,12 +25,11 @@ public class TransAuthService extends Service {
     String appId;
     String secretKey;
 
-    public TransAuthService() {}
-
-    public TransAuthService(String appId, String secretKey, Permission[] permissions) {
-        this.permissions = permissions;
-        this.appId = appId;
-        this.secretKey = secretKey;
+    public TransAuthService() {
+        Log.d("TransAuth", "TransAuthService created");
+        this.permissions = getPermissions();
+        this.appId = getAppId();
+        this.secretKey = getSecretKey();
     }
 
     private boolean checkPossibility() {
