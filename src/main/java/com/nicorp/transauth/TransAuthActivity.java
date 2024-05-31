@@ -1,6 +1,9 @@
 package com.nicorp.transauth;
 
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.View;
+import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +23,14 @@ public class TransAuthActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Initialize UI
+        View frameLayout = findViewById(R.id.frameLayout);
+
+        // Set fragment to frame layout
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(frameLayout.getId(), new EnterFragment())
+                .commit();
     }
 }
