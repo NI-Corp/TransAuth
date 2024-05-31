@@ -1,6 +1,7 @@
 package com.nicorp.transauth;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
@@ -27,7 +28,12 @@ public class TransAuthButton extends LinearLayout {
 
         custom_button.setOnClickListener(v -> {
             // Start TransAuthService
-            TransAuthService transAuthService = new TransAuthService();
+//            TransAuthService transAuthService = new TransAuthService();
+
+            // Go to TransAuthActivity
+            Intent intent = new Intent(context, TransAuthActivity.class);
+            context.startActivity(intent);
+            
 
         });
 
